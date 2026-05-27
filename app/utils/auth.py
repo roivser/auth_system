@@ -5,12 +5,9 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
-from app.models.token_blacklist import TokenBlacklist
-from app.models.user import User
+from app.models import TokenBlacklist, User, UserRole, RolePermission
 from app.utils.security import decode_token
 from sqlalchemy.orm import selectinload
-from app.models.user_role import UserRole
-from app.models.role_permission import RolePermission
 
 bearer_scheme = HTTPBearer()
 
