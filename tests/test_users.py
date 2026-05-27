@@ -58,7 +58,7 @@ async def test_get_me(client: AsyncClient, auth_headers: dict, test_user: User):
 
 async def test_get_me_unauthorized(client: AsyncClient):
     resp = await client.get("/users/me")
-    assert resp.status_code == 403
+    assert resp.status_code == 401
 
 
 async def test_update_me(client: AsyncClient, auth_headers: dict):
